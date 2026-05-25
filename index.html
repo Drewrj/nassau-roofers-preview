@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nassau Roofers, Inc. | Protecting Long Island Homes Since 1978 | East Meadow, NY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#1e293b;background:#f8fafc;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.6;font-size:16px}
+::selection{background:#f59e0b;color:#1e293b}
+
+:root{
+  --brand:#1e3a5f;
+  --brand-dark:#0f1f33;
+  --brand-dark-rgb:15,31,51;
+  --brand-mid:#2a5080;
+  --accent:#f59e0b;
+  --accent-hover:#d97706;
+  --accent-text:#1e293b;
+  --slate-50:#f8fafc;
+  --slate-100:#f1f5f9;
+  --slate-200:#e2e8f0;
+  --slate-300:#cbd5e1;
+  --slate-400:#94a3b8;
+  --slate-500:#64748b;
+  --slate-600:#475569;
+  --slate-700:#334155;
+  --slate-800:#1e293b;
+  --slate-900:#0f172a;
+}
+
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* Navigation */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 24px;transition:all 0.35s ease}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;background:rgba(255,255,255,0.92);padding:5px 10px;border-radius:8px;transition:background 0.35s ease}
+.nav-logo img{height:44px;width:auto;display:block;transition:filter 0.35s ease;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.1))}
+.nav-logo-text{display:none;font-size:22px;letter-spacing:-0.025em;font-weight:700;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.3)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:var(--accent-text) !important;padding:10px 24px;border-radius:100px;font-size:14px;font-weight:600;transition:background 0.2s}
+.nav-cta:hover{background:var(--accent-hover)}
+
+.nav-scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 3px rgba(0,0,0,0.06);padding:10px 24px}
+.nav-scrolled .nav-logo{background:transparent;padding:5px 0}
+.nav-scrolled .nav-logo img{filter:none}
+.nav-scrolled .nav-logo-text{color:var(--brand)}
+.nav-scrolled .nav-links a{color:var(--slate-600)}
+.nav-scrolled .nav-links a:hover{color:var(--accent)}
+.nav-scrolled .nav-cta{background:var(--brand);color:#fff !important}
+.nav-scrolled .nav-cta:hover{background:var(--brand-dark)}
+
+/* Hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,100% 0,100% 88%,50% 100%,0 88%)}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--brand-dark)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,31,51,0.85),rgba(15,31,51,0.55) 45%,rgba(15,31,51,0.92))}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:900px;padding:0 16px 80px;margin-top:80px}
+.hero-label{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
+.hero h1{font-size:clamp(32px,5vw,60px);letter-spacing:-0.025em;font-weight:600;color:#fff;line-height:1.1;margin-bottom:24px}
+.hero-intro{font-size:16px;color:var(--slate-300);max-width:640px;margin:0 auto 40px;line-height:1.625;font-weight:500}
+.hero-stats{display:flex;gap:48px;justify-content:center;margin-bottom:40px;flex-wrap:wrap}
+.hero-stat .number{font-size:36px;letter-spacing:-0.025em;font-weight:600;color:#fff}
+.hero-stat .label{font-size:14px;font-weight:500;color:var(--slate-400);margin-top:4px}
+.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* Buttons */
+.btn{padding:14px 32px;border-radius:100px;font-size:16px;font-weight:600;text-decoration:none;display:inline-block;transition:all 0.2s;border:none;cursor:pointer}
+.btn-accent{background:var(--accent);color:var(--accent-text)}
+.btn-accent:hover{background:var(--accent-hover)}
+.btn-outline-white{background:transparent;border:1px solid #fff;color:#fff}
+.btn-outline-white:hover{background:rgba(255,255,255,0.1)}
+.btn-brand{background:var(--brand);color:#fff}
+.btn-brand:hover{background:var(--brand-dark)}
+.btn-ghost-accent{background:rgba(245,158,11,0.18);color:var(--accent);font-size:14px;padding:10px 24px}
+.btn-ghost-accent:hover{background:rgba(245,158,11,0.28)}
+
+/* Section Headers */
+.section{padding:96px 0}
+.section-alt{background:var(--slate-50)}
+.section-header{text-align:center;margin-bottom:64px}
+.section-label{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:block}
+.section-title{font-size:clamp(28px,3.5vw,40px);letter-spacing:-0.025em;font-weight:600;color:var(--slate-900)}
+.section-subtitle{font-size:16px;color:var(--slate-600);max-width:640px;margin:12px auto 0;line-height:1.625;font-weight:400}
+
+/* Service Cards */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.card{background:#fff;border-radius:1.5rem;padding:0;border:1px solid var(--slate-100);transition:all 0.3s;text-align:center;overflow:hidden}
+.card:hover{box-shadow:0 25px 50px -12px rgba(0,0,0,0.08),0 25px 50px -12px rgba(203,213,225,0.5);transform:translateY(-2px)}
+.card-photo{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:var(--slate-100)}
+.card-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.card:hover .card-photo img{transform:scale(1.04)}
+.card-icon{width:64px;height:64px;background:#fff;border:4px solid #fff;border-radius:1rem;display:flex;align-items:center;justify-content:center;margin:-32px auto 16px;color:var(--brand);position:relative;z-index:1;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.card-icon i{width:32px;height:32px}
+.card-body{padding:0 32px 32px}
+.card h3{font-size:20px;letter-spacing:-0.025em;font-weight:600;color:var(--slate-900);margin-bottom:12px}
+.card p{font-size:16px;color:var(--slate-600);line-height:1.625}
+
+.card-dark{background:var(--brand-dark);border-color:rgba(255,255,255,0.05);box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}
+.card-dark:hover{box-shadow:0 25px 50px -12px rgba(0,0,0,0.35)}
+.card-dark .card-icon{background:var(--brand-dark);border-color:var(--brand-dark);color:var(--accent)}
+.card-dark h3{color:#fff}
+.card-dark p{color:var(--slate-300)}
+.card-dark .card-photo{background:rgba(255,255,255,0.05)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-label{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
+.about-title{font-size:clamp(28px,3.5vw,40px);letter-spacing:-0.025em;font-weight:600;color:var(--slate-900);margin-bottom:24px}
+.about-text{font-size:16px;color:var(--slate-600);line-height:1.625;margin-bottom:24px}
+.about-stats{display:flex;gap:48px;border-top:1px solid var(--slate-200);padding-top:32px;margin-top:32px;flex-wrap:wrap}
+.about-stats h4{font-size:24px;letter-spacing:-0.025em;font-weight:600;color:var(--slate-900);margin-bottom:4px}
+.about-stats p{font-size:14px;font-weight:500;color:var(--slate-500)}
+.about-features{display:flex;flex-direction:column;gap:32px}
+.about-feature{display:flex;gap:24px;align-items:flex-start}
+.about-feature-photo{width:96px;height:96px;min-width:96px;border-radius:1.25rem;overflow:hidden;background:var(--slate-100)}
+.about-feature-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.about-feature h3{font-size:20px;letter-spacing:-0.025em;font-weight:600;color:var(--slate-900);margin-bottom:8px}
+.about-feature p{font-size:16px;color:var(--slate-600);line-height:1.625}
+
+/* Gallery */
+.gallery-section{padding:96px 0;background:var(--slate-50)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-tile{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:1.25rem;background:var(--slate-100);cursor:pointer}
+.gallery-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.gallery-tile:hover img{transform:scale(1.05)}
+.gallery-caption{position:absolute;left:0;right:0;bottom:0;padding:16px 20px;color:#fff;font-size:14px;font-weight:500;background:linear-gradient(to top,rgba(0,0,0,0.7),rgba(0,0,0,0));opacity:0;transition:opacity 0.3s}
+.gallery-tile:hover .gallery-caption{opacity:1}
+
+/* Service Areas */
+.area-pills{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px}
+.area-pill{padding:10px 24px;background:#fff;border:1px solid var(--slate-100);border-radius:100px;font-size:14px;font-weight:500;color:var(--slate-700);transition:all 0.2s}
+.area-pill:hover{border-color:var(--brand);background:var(--slate-50)}
+
+/* Dark Island */
+.dark-island{background:var(--brand-dark);border-radius:3rem;margin:0 24px;padding:96px 24px;position:relative;overflow:hidden}
+.dark-island::before{content:'';position:absolute;inset:0;opacity:0.06;background-image:radial-gradient(circle at 2px 2px,#fff 1px,transparent 0);background-size:40px 40px}
+.dark-island .container{position:relative;z-index:1}
+.dark-island .section-label{color:var(--accent)}
+.dark-island .section-title{color:#fff}
+.dark-island .section-subtitle{color:var(--slate-400)}
+
+.dark-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:1.5rem;padding:32px;transition:all 0.3s}
+.dark-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1);box-shadow:0 20px 40px rgba(0,0,0,0.2)}
+.dark-card .star-row{display:flex;gap:4px;margin-bottom:16px}
+.dark-card .star-row svg{width:16px;height:16px;color:#fbbf24}
+.dark-card .review-text{font-size:16px;color:rgba(255,255,255,0.7);line-height:1.625;font-style:italic;margin-bottom:24px}
+.dark-card .review-author{font-size:18px;letter-spacing:-0.025em;font-weight:600;color:#fff}
+.dark-card .review-source{font-size:13px;color:var(--slate-400);margin-top:4px;font-weight:500}
+
+/* Contact */
+.contact-section{padding:96px 24px;background:var(--slate-50)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;max-width:1280px;margin:0 auto}
+.contact-form-card{background:#fff;border:1px solid var(--slate-200);border-radius:1.5rem;padding:48px;box-shadow:0 4px 16px rgba(0,0,0,0.04)}
+.contact-form-card h3{font-size:24px;font-weight:600;color:var(--slate-900);margin-bottom:8px;letter-spacing:-0.025em}
+.contact-form-card .form-sub{font-size:14px;color:var(--slate-600);margin-bottom:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.form-field label{font-size:13px;font-weight:500;color:var(--slate-700)}
+.form-field input,.form-field textarea{padding:12px 16px;border:1px solid var(--slate-200);border-radius:0.75rem;font-size:15px;font-family:inherit;color:var(--slate-900);background:#fff;transition:border-color 0.2s,box-shadow 0.2s}
+.form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(15,31,51,0.08)}
+.form-field textarea{resize:vertical;min-height:120px}
+.form-submit{width:100%;padding:14px 24px;background:var(--brand);color:#fff;border:none;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;transition:background 0.2s;margin-top:8px;font-family:inherit}
+.form-submit:hover{background:var(--brand-dark)}
+
+.contact-info-card{background:var(--brand-dark);color:#fff;border-radius:1.5rem;padding:48px;position:relative;overflow:hidden}
+.contact-info-card::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 2px 2px,#fff 1px,transparent 0);background-size:40px 40px}
+.contact-info-card>*{position:relative;z-index:1}
+.contact-info-card h3{font-size:24px;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-0.025em}
+.contact-info-card .info-sub{font-size:14px;color:var(--slate-400);margin-bottom:32px;line-height:1.625}
+.info-row{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.info-row:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.info-icon{width:44px;height:44px;min-width:44px;border-radius:0.75rem;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.info-icon svg{width:20px;height:20px}
+.info-content{flex:1;min-width:0}
+.info-content .info-label{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--slate-400);margin-bottom:4px;font-weight:600}
+.info-content .info-value{font-size:16px;font-weight:500;color:#fff;line-height:1.4;word-break:break-word}
+.info-content a{color:#fff;text-decoration:none}
+.info-content a:hover{color:var(--accent)}
+.info-cta{display:block;width:100%;padding:14px 24px;background:var(--accent);color:var(--accent-text);text-decoration:none;border-radius:100px;font-size:15px;font-weight:600;text-align:center;margin-top:32px;transition:background 0.2s}
+.info-cta:hover{background:var(--accent-hover)}
+
+/* Footer */
+.footer{background:var(--brand-dark);color:var(--slate-300);padding:80px 0 48px;border-radius:3rem 3rem 0 0;margin-top:40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:48px;margin-bottom:32px}
+.footer-brand{display:flex;align-items:center;gap:8px;margin-bottom:24px}
+.footer-brand img{height:56px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.25))}
+.footer-brand-text{display:none;font-size:24px;letter-spacing:-0.025em;font-weight:700;color:#fff}
+.footer-desc{font-size:14px;color:var(--slate-400);line-height:1.625;max-width:300px;margin-bottom:32px}
+.footer-social{display:flex;gap:12px}
+.footer-social a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:var(--slate-400);transition:all 0.2s;text-decoration:none}
+.footer-social a:hover{background:var(--accent);color:var(--brand-dark)}
+.footer-social a i{width:16px;height:16px}
+.footer h4{font-size:18px;letter-spacing:-0.025em;font-weight:600;color:#fff;margin-bottom:24px}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:16px}
+.footer ul a{color:var(--slate-400);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+.footer ul a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:500;color:var(--slate-500)}
+
+/* Sticky Mobile CTA */
+.mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;padding:12px 16px;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 -2px 12px rgba(0,0,0,0.1);border-top:1px solid var(--slate-200)}
+.mobile-cta a{display:block;width:100%;padding:14px 24px;background:var(--accent);color:var(--accent-text);text-decoration:none;border-radius:100px;font-size:16px;font-weight:600;text-align:center}
+
+/* Scroll Animations */
+[data-reveal]{opacity:0;transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}
+[data-reveal="up"]{transform:translateY(32px)}
+[data-reveal="fade"]{transform:none}
+[data-reveal="scale"]{transform:scale(0.94)}
+[data-reveal].visible{opacity:1;transform:none}
+.hero-content [data-reveal]{transition-delay:calc(var(--i,0) * 0.1s)}
+
+.card,.dark-card,.area-pill,.gallery-tile{opacity:0;transform:translateY(20px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1),box-shadow 0.3s,border-color 0.3s,background 0.3s}
+.card-grid.visible .card,.testimonials-grid.visible .dark-card,.gallery-grid.visible .gallery-tile{opacity:1;transform:none}
+.card-grid.visible .card:nth-child(1),.testimonials-grid.visible .dark-card:nth-child(1),.gallery-grid.visible .gallery-tile:nth-child(1){transition-delay:0.05s}
+.card-grid.visible .card:nth-child(2),.testimonials-grid.visible .dark-card:nth-child(2),.gallery-grid.visible .gallery-tile:nth-child(2){transition-delay:0.12s}
+.card-grid.visible .card:nth-child(3),.testimonials-grid.visible .dark-card:nth-child(3),.gallery-grid.visible .gallery-tile:nth-child(3){transition-delay:0.19s}
+.card-grid.visible .card:nth-child(4),.gallery-grid.visible .gallery-tile:nth-child(4){transition-delay:0.26s}
+.card-grid.visible .card:nth-child(5),.gallery-grid.visible .gallery-tile:nth-child(5){transition-delay:0.33s}
+.card-grid.visible .card:nth-child(6),.gallery-grid.visible .gallery-tile:nth-child(6){transition-delay:0.40s}
+
+.area-pills.visible .area-pill{opacity:1;transform:none}
+.area-pills.visible .area-pill:nth-child(1){transition-delay:0.02s}
+.area-pills.visible .area-pill:nth-child(2){transition-delay:0.04s}
+.area-pills.visible .area-pill:nth-child(3){transition-delay:0.06s}
+.area-pills.visible .area-pill:nth-child(4){transition-delay:0.08s}
+.area-pills.visible .area-pill:nth-child(5){transition-delay:0.10s}
+.area-pills.visible .area-pill:nth-child(6){transition-delay:0.12s}
+.area-pills.visible .area-pill:nth-child(7){transition-delay:0.14s}
+.area-pills.visible .area-pill:nth-child(8){transition-delay:0.16s}
+.area-pills.visible .area-pill:nth-child(9){transition-delay:0.18s}
+.area-pills.visible .area-pill:nth-child(10){transition-delay:0.20s}
+.area-pills.visible .area-pill:nth-child(11){transition-delay:0.22s}
+.area-pills.visible .area-pill:nth-child(12){transition-delay:0.24s}
+.area-pills.visible .area-pill:nth-child(13){transition-delay:0.26s}
+.area-pills.visible .area-pill:nth-child(14){transition-delay:0.28s}
+.area-pills.visible .area-pill:nth-child(15){transition-delay:0.30s}
+
+/* CTA island visibility fallback */
+.cta-island [data-reveal]{opacity:1;transform:none}
+
+@media(max-width:1024px){
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:768px){
+  .hero{min-height:100vh;clip-path:polygon(0 0,100% 0,100% 93%,50% 100%,0 93%)}
+  .hero h1{font-size:32px}
+  .hero-content{margin-top:100px}
+  .card-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .nav-links{display:none}
+  .mobile-cta{display:block}
+  .dark-island{border-radius:1.5rem;margin:0 12px;padding:64px 16px}
+  .footer{border-radius:1.5rem 1.5rem 0 0}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  .about-stats{gap:32px}
+  .gallery-grid{grid-template-columns:1fr}
+  .contact-section{padding:64px 16px}
+  .contact-form-card,.contact-info-card{padding:32px}
+  .form-row{grid-template-columns:1fr;gap:0}
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KSGGZBYA_YYBPW57P0XARR3FR/logo.jpg" alt="Nassau Roofers, Inc. logo">
+      <span class="nav-logo-text">Nassau Roofers</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#areas">Service Areas</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero" id="hero">
+  <div class="hero-bg" style="background-image:url('https://roofmaxx.com/learning-hub/wp-content/uploads/2021/02/25-roof-maxx-how-to-install-roof-shingles.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-label" data-reveal="fade" style="--i:0">Protecting Long Island Homes Since 1978</span>
+    <h1 data-reveal="up" style="--i:1">47 Years. One Standard.</h1>
+    <p class="hero-intro" data-reveal="up" style="--i:2">Founded by John Reuter and now led by his children Megan and Bryan, Nassau Roofers has been the trusted name in roofing across Nassau and Suffolk Counties for nearly five decades.</p>
+    <div class="hero-stats" data-reveal="up" style="--i:3">
+      <div class="hero-stat">
+        <div class="number">47+</div>
+        <div class="label">Years in Business</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">5.0</div>
+        <div class="label">Star Rating (80+ Reviews)</div>
+      </div>
+    </div>
+    <div class="hero-buttons" data-reveal="up" style="--i:4">
+      <a href="tel:5167857663" class="btn btn-accent">Call (516) 785-7663</a>
+      <a href="#services" class="btn btn-outline-white">Our Services</a>
+    </div>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal="fade">Our Services</span>
+      <h2 class="section-title" data-reveal="up">Complete Roofing and Exterior Solutions</h2>
+      <p class="section-subtitle" data-reveal="up">From full roof replacements to skylights, siding, and gutters, our certified crew handles every aspect of your home's exterior protection.</p>
+    </div>
+    <div class="card-grid">
+      <!-- Card 1: Residential Roofing -->
+      <div class="card">
+        <div class="card-photo"><img src="https://cdn.hswstatic.com/gif/How-to-install-architectural-shingles.jpg" alt="Residential Roofing"></div>
+        <div class="card-icon"><i data-lucide="home" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Residential Roofing</h3>
+          <p>Full roof replacements and new installations using premium Owens Corning and GAF shingles, backed by manufacturer warranties and our 47 years of expertise.</p>
+        </div>
+      </div>
+      <!-- Card 2: Flat Roofing (dark) -->
+      <div class="card card-dark">
+        <div class="card-photo"><img src="https://jpcarrollroofing.com/wp-content/uploads/2025/12/flat-roofing.jpg" alt="Flat Roofing"></div>
+        <div class="card-icon"><i data-lucide="layers" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Flat Roofing</h3>
+          <p>Commercial and residential flat roof systems including TPO, EPDM, and modified bitumen. Versico and Elevate certified for long-lasting, leak-free performance.</p>
+        </div>
+      </div>
+      <!-- Card 3: Skylights -->
+      <div class="card">
+        <div class="card-photo"><img src="https://www.deerparkroofing.com/wp-content/uploads/2020/10/P1074825-scaled.jpg" alt="Skylights"></div>
+        <div class="card-icon"><i data-lucide="sun" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Skylights</h3>
+          <p>Authorized Velux dealer for skylight installation, replacement, and repair. Bring natural light into your home with energy-efficient, properly flashed skylights.</p>
+        </div>
+      </div>
+      <!-- Card 4: Siding -->
+      <div class="card">
+        <div class="card-photo"><img src="https://images.ctfassets.net/79nimht05j33/2Y9nx9feJMsLarau4UHIUF/b0aa5c82ec090aea610f04d4bfecd7eb/Vinyl_Install.jpg?w=1500" alt="Siding"></div>
+        <div class="card-icon"><i data-lucide="panel-left" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Siding</h3>
+          <p>Vinyl, fiber cement, and wood siding installation and repair. We protect and transform your home's exterior with materials built to withstand Long Island weather.</p>
+        </div>
+      </div>
+      <!-- Card 5: Gutters & Leaders (dark) -->
+      <div class="card card-dark">
+        <div class="card-photo"><img src="https://www.legacy-exteriors.com/wp-content/uploads/2023/03/Seamless-Gutters-Madison-Sun-Prairie-WI-Gutter-Guards-15.jpg" alt="Gutters and Leaders"></div>
+        <div class="card-icon"><i data-lucide="droplets" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Gutters &amp; Leaders</h3>
+          <p>Seamless aluminum gutter systems custom-fabricated on-site. Proper drainage protects your foundation, landscaping, and prevents costly water damage.</p>
+        </div>
+      </div>
+      <!-- Card 6: Roof Repair -->
+      <div class="card">
+        <div class="card-photo"><img src="https://generalroof.com/wp-content/uploads/2026/03/roofer-repairing-roof-leak-damaged-shingles.webp" alt="Roof Repair"></div>
+        <div class="card-icon"><i data-lucide="wrench" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Roof Repair</h3>
+          <p>Storm damage, leaks, missing shingles, and emergency repairs. We respond fast to protect your home and prevent further damage to your property.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal="fade">Our Work</span>
+      <h2 class="section-title" data-reveal="up">Recent Projects Across Long Island</h2>
+      <p class="section-subtitle" data-reveal="up">From roof replacements to skylight installations and chimney flashing, see the quality craftsmanship Nassau Roofers delivers on every job.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-tile">
+        <img src="https://roofclaim.com/wp-content/uploads/2022/04/roof-leak.jpg" alt="Roof repair close-up">
+        <div class="gallery-caption">Roof Repair &amp; Leak Prevention</div>
+      </div>
+      <div class="gallery-tile">
+        <img src="https://www.veluxusa.com/images/installation/hero@2x.jpg" alt="Skylight installation">
+        <div class="gallery-caption">Velux Skylight Installation</div>
+      </div>
+      <div class="gallery-tile">
+        <img src="https://www.bethesdachimney.com/wp-content/uploads/2022/08/IMG_20170214_154154.jpg" alt="Chimney flashing">
+        <div class="gallery-caption">Chimney Flashing &amp; Waterproofing</div>
+      </div>
+      <div class="gallery-tile">
+        <img src="https://media.angi.com/s3fs-public/Vinyl-siding-installation-house.jpeg?impolicy=leadImage" alt="Siding installation">
+        <div class="gallery-caption">Vinyl Siding Installation</div>
+      </div>
+      <div class="gallery-tile">
+        <img src="https://www.blackmoosechimney.com/wp-content/uploads/2020/08/DJI_0720.jpg" alt="Aerial roof view">
+        <div class="gallery-caption">Aerial Roof Inspection</div>
+      </div>
+      <div class="gallery-tile">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200" alt="Completed home exterior">
+        <div class="gallery-caption">Completed Home Exterior</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="about-label" data-reveal="fade">About Nassau Roofers, Inc.</span>
+        <h2 class="about-title" data-reveal="up">A Family Legacy Built on Every Roof</h2>
+        <p class="about-text" data-reveal="up">In 1978, John Reuter founded Nassau Roofers with a simple promise: treat every home like your own. Nearly five decades later, his children Megan Ihne (President) and Bryan carry that same standard across every project in Nassau and Suffolk Counties.</p>
+        <p class="about-text" data-reveal="up">As an Owens Corning Preferred Contractor, GAF certified, and Velux authorized dealer, we bring manufacturer-backed warranties and top-tier materials to every job. Our BBB A+ rating since 2002 and 80+ five-star reviews reflect the consistency our Long Island neighbors have come to rely on.</p>
+        <a href="#contact" class="btn btn-ghost-accent" data-reveal="up">Request a Free Estimate</a>
+        <div class="about-stats" data-reveal="up">
+          <div>
+            <h4>47+</h4>
+            <p>Years in Business</p>
+          </div>
+          <div>
+            <h4>A+</h4>
+            <p>BBB Since 2002</p>
+          </div>
+          <div>
+            <h4>80+</h4>
+            <p>5-Star Reviews</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-features" data-reveal="up">
+        <div class="about-feature">
+          <div class="about-feature-photo"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600" alt="47 Years of Trust"></div>
+          <div>
+            <h3>47 Years of Trust</h3>
+            <p>Founded in 1978, we have protected Long Island homes through every season and storm for nearly half a century.</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-photo"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600" alt="Second-Generation Family"></div>
+          <div>
+            <h3>Second-Generation Family</h3>
+            <p>Megan and Bryan continue their father John Reuter's legacy, bringing the same personal care and craftsmanship to every project.</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-photo"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600" alt="BBB A+ Since 2002"></div>
+          <div>
+            <h3>BBB A+ Since 2002</h3>
+            <p>Over two decades of A+ accreditation from the Better Business Bureau reflects our commitment to honest work and customer satisfaction.</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-photo"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600" alt="Licensed and Insured"></div>
+          <div>
+            <h3>Licensed &amp; Insured</h3>
+            <p>Fully licensed and insured with certifications from Owens Corning, GAF, Velux, Versico, and Elevate for your peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Areas -->
+<section class="section" id="areas">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal="fade">Where We Work</span>
+      <h2 class="section-title" data-reveal="up">Serving Nassau &amp; Suffolk Counties</h2>
+      <p class="section-subtitle" data-reveal="up">From our home base in East Meadow, we serve homeowners across Long Island with the same neighborhood-level care.</p>
+    </div>
+    <div class="area-pills">
+      <span class="area-pill">East Meadow</span>
+      <span class="area-pill">Levittown</span>
+      <span class="area-pill">Wantagh</span>
+      <span class="area-pill">Bellmore</span>
+      <span class="area-pill">Merrick</span>
+      <span class="area-pill">Massapequa</span>
+      <span class="area-pill">Farmingdale</span>
+      <span class="area-pill">Hicksville</span>
+      <span class="area-pill">Garden City</span>
+      <span class="area-pill">Freeport</span>
+      <span class="area-pill">Oceanside</span>
+      <span class="area-pill">Baldwin</span>
+      <span class="area-pill">Seaford</span>
+      <span class="area-pill">Plainview</span>
+      <span class="area-pill">Nassau County</span>
+      <span class="area-pill">Suffolk County</span>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="dark-island" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal="fade">Client Testimonials</span>
+      <h2 class="section-title" data-reveal="up">What Our Clients Say</h2>
+      <p class="section-subtitle" data-reveal="up">With a 5.0-star rating across 80+ reviews, our work speaks for itself. Here is what Long Island homeowners have to say.</p>
+    </div>
+    <div class="card-grid testimonials-grid">
+      <div class="dark-card">
+        <div class="star-row">
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+        </div>
+        <p class="review-text">"You get a roof 1x every 25 years and I hit a homerun with Nassau Roofers. Professional from start to finish, fair pricing, and outstanding workmanship."</p>
+        <div class="review-author">George K.</div>
+        <div class="review-source">BBB</div>
+      </div>
+      <div class="dark-card">
+        <div class="star-row">
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+        </div>
+        <p class="review-text">"We had an emergency on Thanksgiving Day and Nassau Roofers came out to help us. That kind of dedication is hard to find. They saved our holiday."</p>
+        <div class="review-author">Roderick D.</div>
+        <div class="review-source">BBB</div>
+      </div>
+      <div class="dark-card">
+        <div class="star-row">
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+        </div>
+        <p class="review-text">"They did my entire split-level house in 7 hours! The crew was efficient, professional, and left the property spotless."</p>
+        <div class="review-author">Yan L.</div>
+        <div class="review-source">BBB</div>
+      </div>
+      <div class="dark-card">
+        <div class="star-row">
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+        </div>
+        <p class="review-text">"Nassau Roofers replaced our roof and we couldn't be happier. The crew was respectful, the work was excellent, and the price was fair."</p>
+        <div class="review-author">Christina M.</div>
+        <div class="review-source">BBB</div>
+      </div>
+      <div class="dark-card">
+        <div class="star-row">
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+        </div>
+        <p class="review-text">"Second time using Nassau Roofers. Same great service as the first time. Highly recommend for any roofing needs on Long Island."</p>
+        <div class="review-author">Robert S.</div>
+        <div class="review-source">BBB</div>
+      </div>
+      <div class="dark-card">
+        <div class="star-row">
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+          <i data-lucide="star" stroke-width="1.5"></i>
+        </div>
+        <p class="review-text">"From the estimate to the finished product, Nassau Roofers was professional and thorough. Our new roof looks amazing."</p>
+        <div class="review-author">Lisa T.</div>
+        <div class="review-source">Angi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title">Ready to Protect Your Home?</h2>
+      <p class="section-subtitle">Request a free estimate from Nassau Roofers. We respond to every inquiry quickly and provide honest, detailed proposals.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form-card">
+        <h3>Send us a message</h3>
+        <p class="form-sub">Fill out the form below and we will get back to you within one business day.</p>
+        <form action="mailto:nassauroofersinc@gmail.com" method="POST" enctype="text/plain">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your roofing project..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Request a Free Estimate</button>
+        </form>
+      </div>
+      <div class="contact-info-card">
+        <h3>Or reach us directly</h3>
+        <p class="info-sub">Call us today for a free estimate. We serve all of Nassau and Suffolk Counties on Long Island.</p>
+        <div class="info-row">
+          <div class="info-icon"><i data-lucide="phone" stroke-width="1.5"></i></div>
+          <div class="info-content">
+            <div class="info-label">Call</div>
+            <div class="info-value"><a href="tel:5167857663">(516) 785-7663</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><i data-lucide="mail" stroke-width="1.5"></i></div>
+          <div class="info-content">
+            <div class="info-label">Email</div>
+            <div class="info-value"><a href="mailto:nassauroofersinc@gmail.com">nassauroofersinc@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><i data-lucide="map-pin" stroke-width="1.5"></i></div>
+          <div class="info-content">
+            <div class="info-label">Location</div>
+            <div class="info-value">518 East Meadow Ave., East Meadow, NY 11554</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><i data-lucide="clock" stroke-width="1.5"></i></div>
+          <div class="info-content">
+            <div class="info-label">Hours</div>
+            <div class="info-value">Mon-Fri: 8:00 AM - 5:00 PM<br>Sat: By Appointment</div>
+          </div>
+        </div>
+        <a href="tel:5167857663" class="info-cta">Call (516) 785-7663</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="https://pub.hyperagent.com/api/published/pbf01KSGGZBYA_YYBPW57P0XARR3FR/logo.jpg" alt="Nassau Roofers, Inc.">
+          <span class="footer-brand-text">Nassau Roofers, Inc.</span>
+        </div>
+        <p class="footer-desc">Protecting Long Island homes since 1978. Second-generation family roofers serving Nassau and Suffolk Counties with integrity and craftsmanship.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/nassau.roofers/" target="_blank" rel="noopener noreferrer"><i data-lucide="facebook" stroke-width="1.5"></i></a>
+          <a href="https://twitter.com/NASSAUROOF" target="_blank" rel="noopener noreferrer"><i data-lucide="twitter" stroke-width="1.5"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Residential Roofing</a></li>
+          <li><a href="#services">Flat Roofing</a></li>
+          <li><a href="#services">Skylights</a></li>
+          <li><a href="#services">Siding</a></li>
+          <li><a href="#services">Gutters &amp; Leaders</a></li>
+          <li><a href="#services">Roof Repair</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="#areas">East Meadow</a></li>
+          <li><a href="#areas">Levittown</a></li>
+          <li><a href="#areas">Wantagh</a></li>
+          <li><a href="#areas">Bellmore</a></li>
+          <li><a href="#areas">Merrick</a></li>
+          <li><a href="#areas">Massapequa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:5167857663" style="display:flex;align-items:center;gap:12px"><i data-lucide="phone" style="width:20px;height:20px;color:var(--accent);flex-shrink:0" stroke-width="1.5"></i>(516) 785-7663</a></li>
+          <li><a href="#contact" style="display:flex;align-items:flex-start;gap:12px"><i data-lucide="map-pin" style="width:20px;height:20px;color:var(--accent);flex-shrink:0" stroke-width="1.5"></i>East Meadow, NY 11554</a></li>
+          <li><a href="mailto:nassauroofersinc@gmail.com" style="display:flex;align-items:center;gap:12px"><i data-lucide="mail" style="width:20px;height:20px;color:var(--accent);flex-shrink:0" stroke-width="1.5"></i>nassauroofersinc@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Nassau Roofers, Inc. All rights reserved.</p>
+      <div style="display:flex;gap:24px">
+        <a href="#" style="color:var(--slate-500);text-decoration:none">Privacy Policy</a>
+        <a href="#" style="color:var(--slate-500);text-decoration:none">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="mobile-cta">
+  <a href="tel:5167857663">Call (516) 785-7663</a>
+</div>
+
+<script>
+(function(){
+  lucide.createIcons();
+  // Force gold fill on testimonial star icons
+  document.querySelectorAll('.dark-card .star-row svg').forEach(function(s){
+    s.style.fill = 'currentColor';
+    s.style.stroke = 'currentColor';
+  });
+  var nav=document.getElementById('main-nav'),hero=document.getElementById('hero');
+  var nIO=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)nav.classList.remove('nav-scrolled');else nav.classList.add('nav-scrolled')})},{threshold:0,rootMargin:'-60px 0px 0px 0px'});
+  nIO.observe(hero);
+  var r=document.querySelectorAll('[data-reveal]'),g=document.querySelectorAll('.card-grid,.testimonials-grid,.area-pills,.gallery-grid');
+  var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target)}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  r.forEach(function(el){io.observe(el)});
+  g.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
