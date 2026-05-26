@@ -38,8 +38,8 @@ body{font-family:'Inter',sans-serif;color:#1e293b;background:#f8fafc;-webkit-fon
 /* Navigation */
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 24px;transition:all 0.35s ease}
 .nav-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;background:rgba(255,255,255,0.92);padding:5px 10px;border-radius:8px;transition:background 0.35s ease}
-.nav-logo img{height:44px;width:auto;display:block;transition:filter 0.35s ease;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.1))}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;transition:all 0.35s ease}
+.nav-logo img{height:44px;width:auto;display:block;transition:filter 0.35s ease;filter:drop-shadow(0 0 8px rgba(255,255,255,0.4)) drop-shadow(0 0 20px rgba(255,255,255,0.15))}
 .nav-logo-text{display:none;font-size:22px;letter-spacing:-0.025em;font-weight:700;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.3)}
 .nav-links{display:flex;align-items:center;gap:32px}
 .nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
@@ -48,7 +48,7 @@ body{font-family:'Inter',sans-serif;color:#1e293b;background:#f8fafc;-webkit-fon
 .nav-cta:hover{background:var(--accent-hover)}
 
 .nav-scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 3px rgba(0,0,0,0.06);padding:10px 24px}
-.nav-scrolled .nav-logo{background:transparent;padding:5px 0}
+
 .nav-scrolled .nav-logo img{filter:none}
 .nav-scrolled .nav-logo-text{color:var(--brand)}
 .nav-scrolled .nav-links a{color:var(--slate-600)}
